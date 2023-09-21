@@ -16,6 +16,7 @@ services:
       - ./nginx/private.pem:/etc/letsencrypt/live/student19.ppctf.com/privkey.pem
       - ./nginx/ssl.conf:/etc/letsencrypt/options-ssl-nginx.conf
       - ./nginx/dhparams.pem:/etc/letsencrypt/ssl-dhparams.pem
+      - ./nginx/student19.conf:/etc/nginx/conf.d/student19.conf
 
   nginx_dvwa:
     build: .
