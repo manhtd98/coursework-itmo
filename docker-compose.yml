@@ -17,6 +17,10 @@ services:
       - ./nginx/ssl.conf:/etc/letsencrypt/options-ssl-nginx.conf
       - ./nginx/dhparams.pem:/etc/letsencrypt/ssl-dhparams.pem
       - ./nginx/student19.conf:/etc/nginx/conf.d/student19.conf
+    depends_on:
+      - nginx_dvwa
+    networks:
+      - dvwa
 
   nginx_dvwa:
     build: .
